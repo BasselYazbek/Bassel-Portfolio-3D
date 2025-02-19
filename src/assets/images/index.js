@@ -5,6 +5,7 @@ import starbucks from './starbucks.png'
 import freelance from './freelance.png';
 import tesla from './tesla.png'
 import logo from './logo.svg'
+import logo1 from './logo1.png';
 
 export {
     hero,
@@ -13,5 +14,5 @@ export {
     starbucks,
     freelance,
     tesla,
-    logo
+    logo1
 }

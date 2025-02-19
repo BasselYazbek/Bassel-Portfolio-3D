@@ -1,7 +1,6 @@
 import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useRef, useState } from "react";
-
 import { Fox } from "../models";
 import useAlert from "../hooks/useAlert";
 import { Alert, Loader } from "../components";
@@ -25,18 +24,17 @@ const Contact = () => {
     setLoading(true);
     setCurrentAnimation("hit");
 
+    // Sending the form data using EmailJS
     emailjs
       .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        "service_2ljanzb", // Your Service ID
+        "template_hkquq1j", // Your Template ID
         {
-          from_name: form.name,
-          to_name: "JavaScript Mastery",
-          from_email: form.email,
-          to_email: "sujata@jsmastery.pro",
-          message: form.message,
+          from_name: form.name, // User's Name
+          from_email: form.email, // User's Email
+          message: form.message, // User's Message
         },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        "f7l1F5Foiyknzjavw" // Your Public Key
       )
       .then(
         () => {
